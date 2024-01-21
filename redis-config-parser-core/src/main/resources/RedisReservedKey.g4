@@ -1,0 +1,65 @@
+lexer grammar RedisReservedKey;
+
+// INCLUDES
+INCLUDE: 'include';
+
+// MODULES
+LOADMODULE: 'loadmodule';
+
+// NETWORK
+BIND: 'bind';
+BIND_SOURCE_ADDR: 'bind-source-addr';
+PROTECTED_MODE: 'protected-mode';
+ENABLE_PROTECTED_CONFIGS: 'enable-protected-configs';
+ENABLE_DEBUG_COMMAND: 'enable-debug-command';
+ENABLE_MODULE_COMMAND: 'enable-module-command';
+PORT: 'port';
+TCP_BACKLOG: 'tcp-backlog';
+
+// TLS/SSL
+
+
+// GENERAL
+
+// SNAPSHOTTING
+
+// REPLICATION
+
+// KEYS TRACKING
+
+// SECURITY
+
+// CLIENTS
+
+// MEMORY MANAGEMENT
+
+// LAZY FREEING
+
+// THREADED I/O
+
+// KERNEL OOM CONTROL
+
+// KERNEL transport hugepage CONTROL
+
+// APPEND ONLY MODE
+
+// SHUTDOWN
+
+// NON-DETERMINISTIC LONG BLOCKING COMMANDS
+
+// REDIS CLUSTER
+
+// CLUSTER DOCKER/NAT support
+
+// SLOW LOG
+
+// LATENCY MONITOR
+
+// LATENCY TRACKING
+
+// EVENT NOTIFICATION
+
+// ADVANCED CONFIG
+
+// ACTIVE DEFRAGMENTATION
+
