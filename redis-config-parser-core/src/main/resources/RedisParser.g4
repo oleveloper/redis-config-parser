@@ -3,7 +3,8 @@ parser grammar RedisParser;
 options { language = Java; tokenVocab = RedisLexer; }
 import SectionIncludesParser, SectionModulesParser, SectionNetworkParser
      , SectionTLSParser, SectionGeneralParser, SectionSnapshottingParser
-     , SectionReplicationParser, SectionSecurityParser;
+     , SectionReplicationParser, SectionSecurityParser, SectionClientsParser
+     , SectionMemoryManagementParser, SectionAppendOnlyModeParser;
 
 configurations
     : configuration+
@@ -18,4 +19,7 @@ configuration
     | snapshottingStatements
     | replicationStatements
     | securityStatements
+    | clientsStatements
+    | memoryManagementStatements
+    | appendOnlyModeStatements
     ;
