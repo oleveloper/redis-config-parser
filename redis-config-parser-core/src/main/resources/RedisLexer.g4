@@ -1,7 +1,7 @@
 lexer grammar RedisLexer;
 
 options { language = Java; }
-import RedisReservedKey;
+import RedisReservedKey, RedisReservedValue;
 
 
 FILE_PATH: UNIX_FILE_PATH | WINDOWS_FILE_PATH;
@@ -12,11 +12,10 @@ IP: IPV4 | IPV6;
 IPV4: ASTERISK | INT DOT INT DOT INT DOT INT;
 IPV6: (MINUS | HEX_DIGIT+)? COLON HEX_DIGIT* COLON (ASTERISK | HEX_DIGIT+ | INT)?;
 
-YESNO: 'yes' | 'no';
-LOCAL: 'local';
-
 INT: DIGIT+;
 
+YESNO: 'yes' | 'no';
+UNDERSCORE: '_';
 MINUS: '-';
 PLUS: '+';
 ASTERISK: '*';
