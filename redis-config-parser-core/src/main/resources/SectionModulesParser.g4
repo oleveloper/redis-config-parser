@@ -9,4 +9,4 @@ modulesStatement:
     loadModule+;
 
 loadModule
-    : LOADMODULE FILE_PATH;
+    :LOADMODULE FILE_PATH ARGS*;
