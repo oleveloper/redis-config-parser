@@ -28,19 +28,19 @@ tlsStatement
     | tlsSessionCacheTimeout
     ;
 
-tlsPort: TLS_PORT;
-tlsCertFile: TLS_CERT_FILE;
-tlsKeyFile: TLS_KEY_FILE;
-tlsKeyFilePass: TLS_KEY_FILE_PASS;
-tlsClientCertFile: TLS_CLIENT_CERT_FILE;
-tlsClientKeyFile: TLS_CLIENT_KEY_FILE;
-tlsClientKeyFilePass: TLS_CLIENT_KEY_FILE_PASS;
-tlsDhParamsFile: TLS_DH_PARAMS_FILE;
-tlsCaCertFile: TLS_CA_CERT_FILE;
-tlsCaCertDir: TLS_CA_CERT_DIR;
-tlsAuthClients: TLS_AUTH_CLIENTS;
-tlsReplication: TLS_REPLICATION;
-tlsCluster: TLS_CLUSTER;
+tlsPort: TLS_PORT INT;
+tlsCertFile: TLS_CERT_FILE (FILE_PATH | FILE_NAME);
+tlsKeyFile: TLS_KEY_FILE (FILE_PATH | FILE_NAME);
+tlsKeyFilePass: TLS_KEY_FILE_PASS (.)+?;
+tlsClientCertFile: TLS_CLIENT_CERT_FILE (FILE_PATH | FILE_NAME);
+tlsClientKeyFile: TLS_CLIENT_KEY_FILE (FILE_PATH | FILE_NAME);
+tlsClientKeyFilePass: TLS_CLIENT_KEY_FILE_PASS (.)+?;
+tlsDhParamsFile: TLS_DH_PARAMS_FILE (FILE_PATH | FILE_NAME);
+tlsCaCertFile: TLS_CA_CERT_FILE FILE_NAME;
+tlsCaCertDir: TLS_CA_CERT_DIR DIR_PATH;
+tlsAuthClients: TLS_AUTH_CLIENTS (YESNO | OPTIONAL); //TODO
+tlsReplication: TLS_REPLICATION YESNO;
+tlsCluster: TLS_CLUSTER YESNO;
 tlsProtocols: TLS_PROTOCOLS;
 tlsCiphers: TLS_CIPHERS;
 tlsCiphersuites: TLS_CIPHERSUITES;
