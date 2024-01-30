@@ -29,10 +29,8 @@ enableDebugCommand: ENABLE_DEBUG_COMMAND (YESNO | LOCAL);
 enableModuleCommand: ENABLE_MODULE_COMMAND (YESNO | LOCAL);
 port: PORT INT;
 tcpBacklog: TCP_BACKLOG INT;
-
-//TODO
-unixsocket: UNIXSOCKET;
-unixsocketperm: UNIXSOCKETPERM;
-timeout: TIMEOUT;
-tcpKeepalive: TCP_KEEPALIVE;
-socketMarkId: SOCKET_MARK_ID;
+unixsocket: UNIXSOCKET FILE_PATH;
+unixsocketperm: UNIXSOCKETPERM INT;
+timeout: TIMEOUT INT;
+tcpKeepalive: TCP_KEEPALIVE INT;
+socketMarkId: SOCKET_MARK_ID INT;
