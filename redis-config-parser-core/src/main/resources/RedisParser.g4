@@ -22,8 +22,8 @@ configuration
     | tlsStatements
     | generalStatements
     | snapshottingStatements
-    | keyTrackingStatements
     | replicationStatements
+    | keyTrackingStatements
     | securityStatements
     | clientsStatements
     | memoryManagementStatements
