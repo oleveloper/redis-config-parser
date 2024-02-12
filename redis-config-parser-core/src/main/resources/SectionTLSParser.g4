@@ -1,32 +1,33 @@
 parser grammar SectionTLSParser;
 
-options { language = Java; tokenVocab = RedisLexer; }
+options {
+	language = Java;
+	tokenVocab = RedisLexer;
+}
 
-tlsStatements:
-    tlsStatement+;
+tlsStatements: tlsStatement+;
 
-tlsStatement
-    : tlsPort
-    | tlsCertFile
-    | tlsKeyFile
-    | tlsKeyFilePass
-    | tlsClientCertFile
-    | tlsClientKeyFile
-    | tlsClientKeyFilePass
-    | tlsDhParamsFile
-    | tlsCaCertFile
-    | tlsCaCertDir
-    | tlsAuthClients
-    | tlsReplication
-    | tlsCluster
-    | tlsProtocols
-    | tlsCiphers
-    | tlsCiphersuites
-    | tlsPreferServerCiphers
-    | tlsSessionCaching
-    | tlsSessionCacheSize
-    | tlsSessionCacheTimeout
-    ;
+tlsStatement:
+	tlsPort
+	| tlsCertFile
+	| tlsKeyFile
+	| tlsKeyFilePass
+	| tlsClientCertFile
+	| tlsClientKeyFile
+	| tlsClientKeyFilePass
+	| tlsDhParamsFile
+	| tlsCaCertFile
+	| tlsCaCertDir
+	| tlsAuthClients
+	| tlsReplication
+	| tlsCluster
+	| tlsProtocols
+	| tlsCiphers
+	| tlsCiphersuites
+	| tlsPreferServerCiphers
+	| tlsSessionCaching
+	| tlsSessionCacheSize
+	| tlsSessionCacheTimeout;
 
 tlsPort: TLS_PORT INT;
 tlsCertFile: TLS_CERT_FILE (FILE_PATH | FILE_NAME);
@@ -38,10 +39,10 @@ tlsClientKeyFilePass: TLS_CLIENT_KEY_FILE_PASS (.)+?;
 tlsDhParamsFile: TLS_DH_PARAMS_FILE (FILE_PATH | FILE_NAME);
 tlsCaCertFile: TLS_CA_CERT_FILE FILE_NAME;
 tlsCaCertDir: TLS_CA_CERT_DIR DIR_PATH;
-tlsAuthClients: TLS_AUTH_CLIENTS (YESNO | OPTIONAL); //TODO
+tlsAuthClients: TLS_AUTH_CLIENTS (YESNO | OPTIONAL);
 tlsReplication: TLS_REPLICATION YESNO;
 tlsCluster: TLS_CLUSTER YESNO;
-tlsProtocols: TLS_PROTOCOLS;
+tlsProtocols: TLS_PROTOCOLS TLS_VERSIONS;
 tlsCiphers: TLS_CIPHERS;
 tlsCiphersuites: TLS_CIPHERSUITES;
 tlsPreferServerCiphers: TLS_PREFER_SERVER_CIPHERS;
