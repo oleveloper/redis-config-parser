@@ -1,4 +1,4 @@
-parser grammar slowlogSectionParser;
+parser grammar SectionSlowLogParser;
 
 options { language = Java; tokenVocab = RedisLexer; }
 

@@ -3,8 +3,13 @@ parser grammar RedisParser;
 options { language = Java; tokenVocab = RedisLexer; }
 import SectionIncludesParser, SectionModulesParser, SectionNetworkParser
      , SectionTLSParser, SectionGeneralParser, SectionSnapshottingParser
-     , SectionReplicationParser, SectionSecurityParser, SectionClientsParser
-     , SectionMemoryManagementParser, SectionAppendOnlyModeParser;
+     , SectionKeyTrackingParser, SectionReplicationParser, SectionSecurityParser
+     , SectionClientsParser, SectionMemoryManagementParser, SectionLazyFreeingParser
+     , SectionThreadedIOParser, SectionKernelControlParser, SectionAppendOnlyModeParser
+     , SectionShutdownParser, SectionBlockingCommandsParser, SectionRedisClusterParser
+     , SectionSlowLogParser, SectionLatencyParser, SectionEventNotificationParser
+     , SectionAdvancedConfigParser, SectionActiveDefragmentationParser
+     ;
 
 configurations
     : configuration+
@@ -17,9 +22,21 @@ configuration
     | tlsStatements
     | generalStatements
     | snapshottingStatements
+    | keyTrackingStatements
     | replicationStatements
     | securityStatements
     | clientsStatements
     | memoryManagementStatements
+    | lazyFreeingStatements
+    | threadedIOStatements
+    | kernelControlStatements
     | appendOnlyModeStatements
+    | shutdownStatements
+    | blockingCommandStatements
+    | redisClusterStatements
+    | slowLogStatements
+    | latencyStatements
+    | eventNotificationStatements
+    | advancedConfigStatements
+    | activeDefragmentationStatements
     ;
