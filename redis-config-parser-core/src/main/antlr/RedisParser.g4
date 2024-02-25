@@ -1,5 +1,9 @@
 parser grammar RedisParser;
 
+@header {
+    package com.oleveloper.redisparser;
+}
+
 options { language = Java; tokenVocab = RedisLexer; }
 import SectionIncludesParser, SectionModulesParser, SectionNetworkParser
      , SectionTLSParser, SectionGeneralParser, SectionSnapshottingParser
